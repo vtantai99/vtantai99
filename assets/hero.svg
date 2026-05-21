@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="550" role="img" aria-labelledby="title">
+  <title id="title">Tai Vo</title>
+  <style>
+    /* Static layer — what renders on initial paint, no animation needed */
+    path {
+      fill: none;
+      stroke: #201D1D;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 0;
+    }
+    @media (prefers-color-scheme: dark) {
+      path { stroke: #FDFCFC; }
+    }
+
+    /* Animation layer — progressive enhancement, only kicks in if motion is allowed.
+       Starts AND ends at the drawn state so it never dips below the static baseline. */
+    @media (prefers-reduced-motion: no-preference) {
+      path { animation: pulse 4s ease-in-out infinite; }
+      .l1 { animation-delay: 0.00s; }
+      .l2 { animation-delay: 0.15s; }
+      .l3 { animation-delay: 0.30s; }
+      .l4 { animation-delay: 0.55s; }
+      .l5 { animation-delay: 0.70s; }
+    }
+    @keyframes pulse {
+      0%, 100% { stroke-dashoffset: 0; }
+      40%, 60% { stroke-dashoffset: 100; }
+    }
+  </style>
+
+  <path class="l1" pathLength="100" d="M 60 40 L 140 40 M 100 40 L 100 130" />
+  <path class="l2" pathLength="100" d="M 170 130 L 210 40 L 250 130 M 185 100 L 235 100" />
+  <path class="l3" pathLength="100" d="M 270 40 L 320 40 M 295 40 L 295 130 M 270 130 L 320 130" />
+  <path class="l4" pathLength="100" d="M 365 40 L 405 130 L 445 40" />
+  <path class="l5" pathLength="100" d="M 470 85 A 40 45 0 0 1 550 85 A 40 45 0 0 1 470 85 Z" />
+</svg>
